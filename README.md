@@ -33,7 +33,11 @@ These exist because I needed them and nothing adequate existed:
 ## Writing
 
 <!-- BLOG-START -->
-_Fetching latest posts..._
+- [How to Know If Your Agentic Workflow Is Actually Working](https://shane.logsdon.io/articles/technical-deep-dives/evaluating-agentic-workflows/)
+- [What AEO Actually Means for a Local Business](https://shane.logsdon.io/articles/strategic-insights/what-aeo-actually-means-for-a-local-business/)
+- [The 75% Problem: Why AI-Assisted Builds Stall at the Finish Line](https://shane.logsdon.io/articles/technical-deep-dives/the-75-percent-problem/)
+- [The Spec Is the Work: PRD-First AI Development](https://shane.logsdon.io/articles/technical-deep-dives/the-spec-is-the-work/)
+- [LLM Context Files Are Deliverables, Not Config](https://shane.logsdon.io/articles/technical-deep-dives/llm-context-files-are-deliverables-not-config/)
 <!-- BLOG-END -->
 
 ---
