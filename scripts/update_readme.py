@@ -2,8 +2,6 @@
 """
 Scrapes shane.logsdon.io for recent articles and updates the Writing
 section of README.md between <!-- BLOG-START --> and <!-- BLOG-END --> markers.
-
-Run manually or via GitHub Actions on a schedule.
 """
 
 import re
@@ -22,17 +20,10 @@ POST_LIMIT = 5
 
 
 class ArticleParser(HTMLParser):
-    """
-    Parses HTML from shane.logsdon.io/articles/ and the homepage.
-    Looks for <h3> or <h2> elements containing anchor tags whose href
-    matches /articles/<category>/<slug>/.
-    """
-
     def __init__(self):
         super().__init__()
         self.articles = []
         self._in_heading = False
-        self._in_time = False
         self._current_href = None
         self._current_title = None
         self._current_date_str = None
@@ -49,7 +40,6 @@ class ArticleParser(HTMLParser):
             if re.match(r"/articles/[^/]+/[^/]+/", href):
                 self._current_href = href
         if tag == "time":
-            self._in_time = True
             dt = attrs.get("datetime", "")
             if dt:
                 try:
@@ -70,21 +60,19 @@ class ArticleParser(HTMLParser):
             self._in_heading = False
             self._current_href = None
             self._current_title = None
-        if tag == "time":
-            self._in_time = False
 
     def handle_data(self, data):
         if self._in_heading and self._current_href:
             self._current_title = (self._current_title or "") + data
 
 
-def fetch_html(url: str) -> str:
+def fetch_html(url):
     req = Request(url, headers={"User-Agent": "github-actions-readme-updater/1.0"})
     with urlopen(req, timeout=15) as resp:
         return resp.read().decode("utf-8", errors="replace")
 
 
-def deduplicate(articles: list) -> list:
+def deduplicate(articles):
     seen = set()
     out = []
     for a in articles:
@@ -94,53 +82,26 @@ def deduplicate(articles: list) -> list:
     return out
 
 
-def fetch_articles() -> list:
+def fetch_articles():
     articles = []
-
-    # Try the articles index page first
-    try:
-        html = fetch_html(ARTICLES_URL)
-        parser = ArticleParser()
-        parser.feed(html)
-        articles.extend(parser.articles)
-    except Exception as e:
-        print(f"Warning: could not fetch {ARTICLES_URL}: {e}", file=sys.stderr)
-
-    # Also check homepage — it often features the most recent posts
-    try:
-        html = fetch_html(HOMEPAGE_URL)
-        parser = ArticleParser()
-        parser.feed(html)
-        articles.extend(parser.articles)
-    except Exception as e:
-        print(f"Warning: could not fetch {HOMEPAGE_URL}: {e}", file=sys.stderr)
+    for url in (ARTICLES_URL, HOMEPAGE_URL):
+        try:
+            html = fetch_html(url)
+            parser = ArticleParser()
+            parser.feed(html)
+            articles.extend(parser.articles)
+        except Exception as e:
+            print(f"Warning: could not fetch {url}: {e}", file=sys.stderr)
 
     articles = deduplicate(articles)
-
-    # Sort: articles with dates newest-first, then undated ones
-    dated = sorted(
-        [a for a in articles if a["date"]],
-        key=lambda a: a["date"],
-        reverse=True,
-    )
+    dated = sorted([a for a in articles if a["date"]], key=lambda a: a["date"], reverse=True)
     undated = [a for a in articles if not a["date"]]
-
     return (dated + undated)[:POST_LIMIT]
 
 
-def format_post_line(article: dict) -> str:
-    date = f" — {article['date_str']}" if article["date_str"] else ""
-    return f"- [{article['title']}]({article['url']}){date}"
-
-
-def update_readme(posts: list[str]) -> bool:
-    """
-    Replaces the content between BLOG-START and BLOG-END markers.
-    Returns True if the file was changed.
-    """
+def update_readme(posts):
     with open(README_PATH) as f:
         original = f.read()
-
     block = "\n".join(posts)
     updated = re.sub(
         rf"{re.escape(MARKER_START)}.*?{re.escape(MARKER_END)}",
@@ -148,33 +109,24 @@ def update_readme(posts: list[str]) -> bool:
         original,
         flags=re.DOTALL,
     )
-
     if updated == original:
         return False
-
     with open(README_PATH, "w") as f:
         f.write(updated)
-
     return True
 
 
 def main():
     articles = fetch_articles()
-
     if not articles:
         print("No articles found — README unchanged.")
         return
-
-    lines = [format_post_line(a) for a in articles]
+    lines = [f"- [{a['title']}]({a['url']}) — {a['date_str']}" for a in articles]
     changed = update_readme(lines)
-
     if changed:
-        print(f"Updated README with {len(lines)} posts:")
-        for line in lines:
-            print(f"  {line}")
+        print(f"Updated README with {len(lines)} posts.")
     else:
         print("README already up to date.")
-
 
 if __name__ == "__main__":
     main()
