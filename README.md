@@ -8,7 +8,7 @@ Most of my personal work lives at the intersection of AI tooling, web standards,
 
 ## Currently building
 
-**[signalbloom.io](https://signalbloom.io)** — turns forum noise into qualified pipeline. Monitors Reddit, HN, Discourse, and StackExchange for competitor switching signals and routes them to sales before the prospect is gone.
+**[LeadSurface](https://www.leadsurface.com)** — turns forum noise into qualified pipeline. Monitors Reddit, HN, Discourse, and StackExchange for competitor switching signals and routes them to sales before the prospect is gone.
 
 **[hermes-dispatch](https://github.com/slogsdon/hermes-dispatch)** — local-first agent routing across 28 specialized Claude Code agents. Think unix pipes, but for AI workflows.
 
