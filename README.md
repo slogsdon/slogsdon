@@ -37,7 +37,7 @@ These exist because I needed them and nothing adequate existed:
 - [The Framework Emergence Loop: How Durable AI Workflows Are Actually Found](https://shane.logsdon.io/articles/technical-deep-dives/framework-emergence-loop/) — 
 - [How to Know If Your Agentic Workflow Is Actually Working](https://shane.logsdon.io/articles/technical-deep-dives/evaluating-agentic-workflows/) — 
 - [What AEO Actually Means for a Local Business](https://shane.logsdon.io/articles/strategic-insights/what-aeo-actually-means-for-a-local-business/) — 
-- [The 75% Problem: Why AI-Assisted Builds Stall at the Finish Line](https://shane.logsdon.io/articles/technical-deep-dives/the-75-percent-problem/) — 
+- [The Specification Boundary: Why AI-Assisted Builds Stall at 75%](https://shane.logsdon.io/articles/technical-deep-dives/the-specification-boundary/) — 
 <!-- BLOG-END -->
 
 ---
