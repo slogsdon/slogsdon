@@ -33,11 +33,11 @@ These exist because I needed them and nothing adequate existed:
 ## Writing
 
 <!-- BLOG-START -->
+- [The Split Audience: The First Reader of Your Docs Isn't a Developer](https://shane.logsdon.io/articles/strategic-insights/the-split-audience/) — 
 - [Building on the Margins](https://shane.logsdon.io/articles/strategic-insights/building-on-the-margins/) — 
 - [The Framework Emergence Loop: How Durable AI Workflows Are Actually Found](https://shane.logsdon.io/articles/technical-deep-dives/framework-emergence-loop/) — 
 - [How to Know If Your Agentic Workflow Is Actually Working](https://shane.logsdon.io/articles/technical-deep-dives/evaluating-agentic-workflows/) — 
 - [What AEO Actually Means for a Local Business](https://shane.logsdon.io/articles/strategic-insights/what-aeo-actually-means-for-a-local-business/) — 
-- [The Specification Boundary: Why AI-Assisted Builds Stall at 75%](https://shane.logsdon.io/articles/technical-deep-dives/the-specification-boundary/) — 
 <!-- BLOG-END -->
 
 ---
