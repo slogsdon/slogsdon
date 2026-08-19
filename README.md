@@ -33,11 +33,11 @@ These exist because I needed them and nothing adequate existed:
 ## Writing
 
 <!-- BLOG-START -->
+- [DevRel Is Distribution Work. Neon Just Proved What It's Worth.](https://shane.logsdon.io/articles/industry-analysis/devrel-is-distribution-work/) — 
 - [Witnessed Practice Is the New Tutorial](https://shane.logsdon.io/articles/strategic-insights/witnessed-practice-is-the-new-tutorial/) — 
 - [The 25% That AI Can't Do Is the Whole Job Now](https://shane.logsdon.io/articles/leadership-and-management/the-25-percent-that-ai-cant-do/) — 
 - [AEO Is DevRel Infrastructure (And Nobody Owns It)](https://shane.logsdon.io/articles/technical-deep-dives/aeo-is-devrel-infrastructure/) — 
 - [The Split Audience: The First Reader of Your Docs Isn't a Developer](https://shane.logsdon.io/articles/strategic-insights/the-split-audience/) — 
-- [Building on the Margins](https://shane.logsdon.io/articles/strategic-insights/building-on-the-margins/) — 
 <!-- BLOG-END -->
 
 ---
