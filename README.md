@@ -36,6 +36,8 @@ These exist because I needed them and nothing adequate existed:
 - [Value Creation Just Became the Distribution Strategy](https://shane.logsdon.io/articles/strategic-insights/value-creation-as-distribution/) — 
 - [Community When AI Answers the Questions](https://shane.logsdon.io/articles/industry-analysis/community-when-ai-answers-the-questions/) — 
 - [Evaluate Your DevRel Program Like an Agentic Workflow](https://shane.logsdon.io/articles/technical-deep-dives/evaluate-devrel-like-an-agentic-workflow/) — 
+- [What Do We Measure When AI Answers the Questions?](https://shane.logsdon.io/articles/strategic-insights/what-do-we-measure/) — 
+- [DevRel Is Distribution Work. Neon Just Proved What It's Worth.](https://shane.logsdon.io/articles/industry-analysis/devrel-is-distribution-work/) — 
 <!-- BLOG-END -->
 
 ---
