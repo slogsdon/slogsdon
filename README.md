@@ -1,6 +1,6 @@
 # Shane Logsdon
 
-Developer advocate at [Global Payments](https://developer.globalpayments.com), building developer experience infrastructure at enterprise scale: PCI, tokenization, 3DS, ACH, the parts that matter when money moves.
+Technical product leader. I spent eleven years at Global Payments building developer experience infrastructure at enterprise scale: PCI, tokenization, 3DS, ACH, the parts that matter when money moves. Now I'm building [LeadSurface](https://www.leadsurface.com).
 
 Most of my personal work lives at the intersection of AI tooling, web standards, and developer experience. Louisville, KY.
 
